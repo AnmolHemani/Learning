@@ -1,3 +1,4 @@
 # Ignore virtual environment folders
 venv
 /Learning Flask/venv
+/Learning Firecrawl/.env
