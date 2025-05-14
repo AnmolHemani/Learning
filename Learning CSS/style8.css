@@ -1,0 +1,36 @@
+.fade-btn {
+  padding: 10px 20px;
+  background-color: teal;
+  color: white;
+  border: none;
+  transition: background-color 0.5s ease;
+}
+
+.fade-btn:hover {
+  background-color: coral;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.1);   /* Slightly enlarges the box */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Adds shadow */
+}
+
+.card {
+  width: 250px;
+  height: 150px;
+  background-color: #f0f0f0;
+  transition: transform 0.3s, background-color 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-10px);  /* Moves the card up */
+  background-color: #ffe600;     /* Changes the background */
+}
+

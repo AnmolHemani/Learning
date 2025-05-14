@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <meta name="description" content="Personal Portfolio of a Developer">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark {
+      background: #111;
+      color: #eee;
+    }
+    header, footer, section {
+      padding: 20px;
+      margin: 10px auto;
+      max-width: 900px;
+    }
+    header, footer {
+      background: #333;
+      color: white;
+      text-align: center;
+    }
+    input, textarea {
+      width: 100%;
+      margin: 5px 0;
+      padding: 10px;
+    }
+    .card, .project {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background: white;
+    }
+    .dark .card, .dark .project {
+      background: #222;
+      border-color: #444;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .gallery img {
+      width: 100%;
+      border: 2px solid #ddd;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 contenteditable="true">Your Name</h1>
+    <p contenteditable="true">Web Developer | Coder | Designer</p>
+    <button onclick="toggleDarkMode()">🌗 Toggle Theme</button>
+  </header>
+
+  <section id="about">
+    <h2>👤 About Me</h2>
+    <div class="card">
+      <input type="file" accept="image/*" onchange="loadImage(event)">
+      <img id="profileImg" src="https://via.placeholder.com/150" alt="Profile Image">
+      <textarea placeholder="Write about yourself..." id="bio"></textarea>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>📁 Projects</h2>
+    <div class="project">
+      <h3 contenteditable="true">Project 1 Title</h3>
+      <p contenteditable="true">Short description of your project.</p>
+      <video controls width="300">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="project">
+      <h3 contenteditable="true">Project 2 Title</h3>
+      <p contenteditable="true">Description of another cool project.</p>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>🛠️ Skills</h2>
+    <ul>
+      <li>HTML <meter value="0.9">90%</meter></li>
+      <li>CSS <meter value="0.8">80%</meter></li>
+      <li>JavaScript <meter value="0.75">75%</meter></li>
+    </ul>
+    <p>Portfolio Completion Progress:</p>
+    <progress value="80" max="100"></progress>
+  </section>
+
+  <section id="gallery">
+    <h2>📷 Gallery</h2>
+    <div class="gallery">
+      <picture>
+        <source media="(min-width: 768px)" srcset="https://via.placeholder.com/600">
+        <img src="https://via.placeholder.com/300" alt="Gallery image">
+      </picture>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📬 Contact Me</h2>
+    <form>
+      <label>Email: <input type="email" required></label>
+      <label>Message: <textarea required></textarea></label>
+      <input type="submit" value="Send">
+    </form>
+    <p>Your location: <span id="location">Loading...</span></p>
+  </section>
+
+  <footer>
+    <p>🔗 Connect with me:</p>
+    <a href="#" style="color:white;">LinkedIn</a> |
+    <a href="#" style="color:white;">GitHub</a> |
+    <a href="#" style="color:white;">Twitter</a>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    function loadImage(event) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        document.getElementById('profileImg').src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    navigator.geolocation?.getCurrentPosition((pos) => {
+      document.getElementById("location").textContent =
+        `Lat: ${pos.coords.latitude.toFixed(2)}, Lon: ${pos.coords.longitude.toFixed(2)}`;
+    });
+  </script>
+
+</body>
+</html>

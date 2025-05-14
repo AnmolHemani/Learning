@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My portfolio page showcasing projects and skills.">
+  <meta name="keywords" content="web development, HTML, CSS, JavaScript, portfolio">
+  <title>My Portfolio</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- Responsive Design -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .card {
+      width: 30%;
+      margin: 10px;
+      padding: 20px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .toggle-btn {
+      display: block;
+      width: 150px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .toggle-btn:hover {
+      background-color: #555;
+    }
+    /* Media Query for Responsiveness */
+    @media screen and (max-width: 768px) {
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+  </header>
+
+  <!-- Toggle Dark Mode Button -->
+  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <div class="container">
+      <div class="card">
+        <h3>About Me</h3>
+        <p>I'm a passionate web developer who loves building interactive UIs and working with modern technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 style="text-align:center;">My Projects</h2>
+    <div class="container">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio built with HTML, CSS, and JavaScript to showcase my work.</p>
+      </div>
+      <div class="card">
+        <h3>Blog Platform</h3>
+        <p>A blog platform built using Node.js and MongoDB.</p>
+      </div>
+      <div class="card">
+        <h3>Online Store</h3>
+        <p>An e-commerce website built with React and Express.js.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="/submit" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Media Section (Audio, Video, and Image) -->
+  <section id="media">
+    <h2>Media Section</h2>
+
+    <!-- Audio Example -->
+    <audio controls>
+      <source src="audio.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Video Example -->
+    <video width="320" height="240" controls>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+
+    <!-- Image Example -->
+    <img src="image.jpg" alt="A descriptive image" width="300">
+  </section>
+
+  <!-- Table Section -->
+  <section id="table">
+    <h2>Portfolio Data</h2>
+    <table border="1">
+      <caption>My Projects</caption>
+      <tr>
+        <th>Project</th>
+        <th>Technologies</th>
+      </tr>
+      <tr>
+        <td>Portfolio Website</td>
+        <td>HTML, CSS, JavaScript</td>
+      </tr>
+      <tr>
+        <td>Blog Platform</td>
+        <td>Node.js, MongoDB</td>
+      </tr>
+      <tr>
+        <td>Online Store</td>
+        <td>React, Express.js</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    function toggleDarkMode() {
+      const currentBg = document.body.style.backgroundColor;
+      if (currentBg === 'rgb(0, 0, 0)') {
+        document.body.style.backgroundColor = '#fff';
+        document.body.style.color = '#333';
+      } else {
+        document.body.style.backgroundColor = '#000';
+        document.body.style.color = '#fff';
+      }
+    }
+  </script>
+
+</body>
+</html>

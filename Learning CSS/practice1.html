@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Portfolio</title>
+  <link rel="stylesheet" href="practice1.css">
+</head>
+<body>
+  <header>
+    <div class="theme-toggle">
+      <button id="theme-toggle-btn">Switch Theme</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="about">
+    <h1>About Me</h1>
+    <p>Hello, I'm a web developer passionate about building awesome websites.</p>
+    <div class="about-icons">
+      <div class="icon">
+        <i class="fas fa-code"></i>
+        <p>Coding</p>
+      </div>
+      <div class="icon">
+        <i class="fas fa-laptop-code"></i>
+        <p>Frontend Development</p>
+      </div>
+      <div class="icon">
+        <i class="fas fa-brain"></i>
+        <p>Problem Solving</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <h1>Skills</h1>
+    <div class="skills-container">
+      <div class="skill">
+        <label>HTML</label>
+        <div class="skill-bar html"></div>
+      </div>
+      <div class="skill">
+        <label>CSS</label>
+        <div class="skill-bar css"></div>
+      </div>
+      <div class="skill">
+        <label>JavaScript</label>
+        <div class="skill-bar javascript"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h1>Contact Me</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

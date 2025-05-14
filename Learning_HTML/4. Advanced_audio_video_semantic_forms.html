@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Webpage with Iframe, Forms, Video, and Audio</title>
+</head>
+<body>
+
+<header>
+    <h1>Interactive Webpage with Iframe, Forms, Video, and Audio</h1>
+</header>
+
+<!-- Embedding Google Maps using iframe -->
+<section>
+    <h2>Location on Map</h2>
+    <iframe src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=New+York"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<!-- Embedding a Video -->
+<section>
+    <h2>Featured Video</h2>
+    <video width="600" height="400" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+<!-- Embedding Audio -->
+<section>
+    <h2>Audio Sample</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</section>
+
+<!-- Contact Form with Advanced Inputs -->
+<section>
+    <h2>Contact Form</h2>
+    <form action="/submit" method="POST">
+        <!-- Text Input -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <!-- Email Input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Radio Buttons (Gender) -->
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <!-- Checkbox (Subscribe to newsletter) -->
+        <input type="checkbox" id="subscribe" name="subscribe">
+        <label for="subscribe">Subscribe to our newsletter</label><br><br>
+
+        <!-- Select Dropdown (Country) -->
+        <label for="country">Choose a country:</label>
+        <select id="country" name="country">
+            <option value="usa">USA</option>
+            <option value="india">India</option>
+            <option value="uk">UK</option>
+        </select><br><br>
+
+        <!-- Textarea (Message) -->
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 My Interactive Webpage</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Interactive Profile Card">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Profile Card</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    section { margin-bottom: 30px; }
+    input, textarea { margin: 5px 0; width: 100%; padding: 8px; }
+    .card { border: 1px solid #ccc; padding: 15px; border-radius: 10px; }
+  </style>
+</head>
+<body itemscope itemtype="http://schema.org/Person">
+
+  <h1>🧠 Interactive Profile Card</h1>
+
+  <!-- Editable Form Inputs -->
+  <section>
+    <h2>✏️ Fill Your Details</h2>
+    <form oninput="updateCard()">
+      <label>Name: <input type="text" id="inputName" placeholder="Enter your name" required></label><br>
+      <label>Email: <input type="email" id="inputEmail" required></label><br>
+      <label>Bio: <textarea id="inputBio" rows="3" placeholder="Tell us about yourself"></textarea></label><br>
+    </form>
+  </section>
+
+  <!-- Profile Card Display -->
+  <section>
+    <h2>👤 Your Live Profile Card</h2>
+    <div class="card">
+      <h3 id="cardName" itemprop="name">[Your Name]</h3>
+      <p id="cardBio">[Your bio will appear here]</p>
+      <p>Email: <span id="cardEmail">[Your email]</span></p>
+    </div>
+  </section>
+
+  <!-- Audio/Video Section -->
+  <section>
+    <h2>🎧 Media Section</h2>
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    </audio>
+    <br><br>
+    <video width="320" height="240" controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- Progress and Meter -->
+  <section>
+    <h2>📊 Completion Stats</h2>
+    <label>Form Completion:</label>
+    <progress id="formProgress" value="0" max="100"></progress><br><br>
+
+    <label>Reputation:</label>
+    <meter value="0.6" min="0" max="1">60%</meter>
+  </section>
+
+  <!-- Template Example -->
+  <section>
+    <h2>📥 Load Dynamic Message</h2>
+    <template id="msgTemplate">
+      <div style="background:#dff0d8;padding:10px;margin-top:10px;">
+        ✅ Profile has been updated!
+      </div>
+    </template>
+    <button onclick="loadTemplate()">Show Confirmation</button>
+    <div id="msgContainer"></div>
+  </section>
+
+  <!-- Location -->
+  <section>
+    <h2>📍 Location</h2>
+    <p id="location">Fetching your location...</p>
+  </section>
+
+  <script>
+    function updateCard() {
+      const name = document.getElementById('inputName').value;
+      const email = document.getElementById('inputEmail').value;
+      const bio = document.getElementById('inputBio').value;
+
+      document.getElementById('cardName').textContent = name || '[Your Name]';
+      document.getElementById('cardEmail').textContent = email || '[Your email]';
+      document.getElementById('cardBio').textContent = bio || '[Your bio will appear here]';
+
+      const fieldsFilled = [name, email, bio].filter(Boolean).length;
+      const progress = (fieldsFilled / 3) * 100;
+      document.getElementById('formProgress').value = progress;
+    }
+
+    function loadTemplate() {
+      const tpl = document.getElementById('msgTemplate');
+      const clone = tpl.content.cloneNode(true);
+      document.getElementById('msgContainer').appendChild(clone);
+    }
+
+    navigator.geolocation?.getCurrentPosition(pos => {
+      document.getElementById("location").textContent =
+        `Lat: ${pos.coords.latitude}, Lon: ${pos.coords.longitude}`;
+    });
+  </script>
+
+</body>
+</html>

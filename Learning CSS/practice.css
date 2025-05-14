@@ -1,0 +1,57 @@
+/* Container to hold the cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card styling */
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-10px);
+  background-color: #ffeb3b;
+}
+
+/* Title and text styles */
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+.card-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+  background-color: #08a010;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+  }
+}

@@ -1,0 +1,13 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 100px 100px;
+  gap: 20px;
+}
+
+.item {
+  background: salmon;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}

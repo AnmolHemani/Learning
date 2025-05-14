@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Portfolio Layout</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, p, ul {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header and navigation bar */
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    header h1 {
+      display: inline;
+    }
+
+    nav ul {
+      display: inline;
+      float: right;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* Main content layout */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    /* Card layout */
+    .card {
+      width: 30%;
+      margin: 10px;
+      padding: 20px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 15px 0;
+    }
+
+    .card p {
+      font-size: 14px;
+    }
+
+    /* Media Query for responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 80%;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header and Navigation -->
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <section id="about">
+    <div class="container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300" alt="About Me">
+        <h3>About Me</h3>
+        <p>I'm a passionate web developer with experience in front-end and back-end technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 style="text-align:center; padding-top: 30px;">Projects</h2>
+    <div class="container">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Project 1">
+        <h3>Portfolio Website</h3>
+        <p>Built with HTML, CSS, and JavaScript to showcase my projects.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Project 2">
+        <h3>Blog Platform</h3>
+        <p>A blog platform built using Node.js and MongoDB for managing articles.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Project 3">
+        <h3>Online Store</h3>
+        <p>An e-commerce website with a complete shopping cart and payment system.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+
+</body>
+</html>

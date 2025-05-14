@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Tag Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header, footer {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      background: #fff;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .profile-card {
+      border: 2px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My Page</h1>
+    <p>This demo shows <span class="highlight">div</span>, <span class="highlight">section</span>, and <span class="highlight">span</span>.</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me (Using &lt;section&gt;)</h2>
+    <div class="profile-card">
+      <h3>John Doe</h3>
+      <p>I am a <span class="highlight">Frontend Developer</span> who loves building interactive UIs.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects (Using &lt;section&gt; and &lt;div&gt;)</h2>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>This is a simple portfolio built with HTML, styled with CSS, and enhanced with a bit of JavaScript.</p>
+    </div>
+    <div class="project-card">
+      <h3>Blog Platform</h3>
+      <p>Built using modern tools. It's <span class="highlight">fully responsive</span> and fast.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ using HTML only. &copy; 2025</p>
+  </footer>
+
+</body>
+</html>

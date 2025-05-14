@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submitted Applications</title>
+</head>
+<body>
+    <h2>Submitted Applications</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>College Name</th>
+            <th>Graduation Year</th>
+            <th>Stream</th>
+            <th>Position</th>
+            <th>Resume</th>
+        </tr>
+
+        {% for row in data %}
+        <tr>
+            {% for col in row %}
+            <td>{{ col }}</td>
+            {% endfor %}
+            <td>
+                {% if row[9] %}
+                    <a href="{{ row[9] }}" target="_blank">View Resume</a>
+                {% else %}
+                    No Resume Uploaded
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back to Form</a>
+</body>
+</html>

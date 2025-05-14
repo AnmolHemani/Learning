@@ -1,0 +1,171 @@
+/* Root Variables for Light/Dark Mode */
+:root {
+  --bg-color-light: #f0f0f0;
+  --bg-color-dark: #333;
+  --text-color-light: #333;
+  --text-color-dark: #fff;
+  --primary-color: #3498db;
+  --accent-color: #e74c3c;
+  --highlight-color: #2ecc71;
+}
+
+/* Apply the light theme by default */
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.theme-toggle button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle button:hover {
+  transform: scale(1.1);
+}
+
+/* About Section */
+.about {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.about h1 {
+  font-size: 36px;
+}
+
+.about-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.icon {
+  text-align: center;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* Skills Section */
+.skills {
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skill {
+  text-align: center;
+}
+
+.skill-bar {
+  height: 20px;
+  border-radius: 10px;
+  background-color: #ccc;
+  margin-top: 10px;
+  transition: width 2s ease;
+}
+
+.html {
+  width: 90%;
+  background-color: #e74c3c;
+}
+
+.css {
+  width: 85%;
+  background-color: #3498db;
+}
+
+.javascript {
+  width: 80%;
+  background-color: #f39c12;
+}
+
+/* Contact Section */
+.contact {
+  padding: 40px 20px;
+  background-color: #ecf0f1;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.contact button:hover {
+  transform: scale(1.1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color-light: #333;
+  --bg-color-dark: #222;
+  --text-color-light: #fff;
+  --text-color-dark: #333;
+}
+
+/* Keyframes for Animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1, p {
+  animation: slideIn 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}

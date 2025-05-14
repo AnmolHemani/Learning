@@ -1,0 +1,14 @@
+#main-title {
+  color: darkblue;
+}
+
+p {
+  color: green;
+  font-style: italic;
+}
+
+.card {
+  background-color: lightyellow;
+  padding: 10px;
+  border: 1px solid gray;
+}

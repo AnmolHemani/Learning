@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All HTML5 Features in One</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    section { margin-bottom: 40px; }
+    table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>🔧 Advanced HTML5 Demo</h1>
+
+<!-- 1. Advanced Form with Validation -->
+<section>
+  <h2>1. Advanced Form</h2>
+  <form>
+    <label>Name: <input type="text" required></label><br><br>
+    <label>Email: <input type="email" required></label><br><br>
+    <label>Age (18-60): <input type="number" min="18" max="60" required></label><br><br>
+    <label>Color Picker: <input type="color"></label><br><br>
+    <label>Phone: <input type="tel" pattern="[0-9]{10}" placeholder="1234567890" required></label><br><br>
+    <label>Search: <input type="search" placeholder="Search something"></label><br><br>
+    <label>Range: <input type="range" min="0" max="100"></label><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</section>
+
+<!-- 2. Audio and Video Embeds -->
+<section>
+  <h2>2. Audio & Video</h2>
+  <audio controls>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    Your browser does not support audio.
+  </audio>
+  <br><br>
+  <video width="320" height="240" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</section>
+
+<!-- 3. Advanced Table -->
+<section>
+  <h2>3. Advanced Table</h2>
+  <table>
+    <colgroup>
+      <col style="background-color: #f9f9f9;">
+      <col style="background-color: #e0f7fa;">
+    </colgroup>
+    <thead>
+      <tr><th>Name</th><th>Age</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>John</td><td>30</td></tr>
+      <tr><td>Alice</td><td>25</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="2">Total: 2 People</td></tr>
+    </tfoot>
+  </table>
+</section>
+
+<!-- 4. HTML5 APIs -->
+<section>
+  <h2>4. HTML5 API: Geolocation & LocalStorage</h2>
+  <button onclick="getLocation()">📍 Get Location</button>
+  <p id="location"></p>
+  
+  <button onclick="saveData()">💾 Save Name</button>
+  <button onclick="loadData()">📂 Load Name</button>
+  <p id="savedName"></p>
+
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((pos) => {
+          document.getElementById('location').innerText =
+            "Latitude: " + pos.coords.latitude + ", Longitude: " + pos.coords.longitude;
+        });
+      } else {
+        alert("Geolocation not supported.");
+      }
+    }
+
+    function saveData() {
+      localStorage.setItem("myName", "John Doe");
+      alert("Name saved!");
+    }
+
+    function loadData() {
+      const name = localStorage.getItem("myName");
+      document.getElementById("savedName").innerText = "Stored Name: " + name;
+    }
+  </script>
+</section>
+
+<!-- 5. HTML Template -->
+<section>
+  <h2>5. HTML Template</h2>
+  <template id="msgTemplate">
+    <div style="background:#dff0d8; padding:10px; margin-top:10px;">
+      ✅ This is dynamically loaded content from a template.
+    </div>
+  </template>
+  <button onclick="loadTemplate()">Load Template</button>
+  <div id="output"></div>
+
+  <script>
+    function loadTemplate() {
+      const tpl = document.getElementById('msgTemplate');
+      const clone = tpl.content.cloneNode(true);
+      document.getElementById('output').appendChild(clone);
+    }
+  </script>
+</section>
+
+<!-- 6. Custom Data Attributes -->
+<section>
+  <h2>6. Custom Data Attributes</h2>
+  <div id="user" data-name="Amit" data-role="Admin">Click me to show data attributes</div>
+  <script>
+    document.getElementById("user").onclick = function() {
+      alert("Name: " + this.dataset.name + ", Role: " + this.dataset.role);
+    };
+  </script>
+</section>
+
+<!-- 7. Progress and Meter -->
+<section>
+  <h2>7. Progress and Meter</h2>
+  <label>Progress:</label>
+  <progress value="70" max="100"></progress><br><br>
+
+  <label>Disk Usage:</label>
+  <meter value="0.6" min="0" max="1">60%</meter>
+</section>
+
+</body>
+</html>
